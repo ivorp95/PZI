@@ -13,6 +13,12 @@
             let nav=document.getElementById("navigacija").innerHTML;
             document.getElementById("ispis2").innerHTML=nav;
         }
+        function posalji(){
+            alert("poziv funkcije");
+            let email=document.getElementById("email").value;
+            let poruka=document.getElementById("poruka").value;
+            document.getElementById("korisnikUnos").innerHTML="Korisnik "+email+" je poslao poruku sadrzaja "+poruka;
+        }
     </script>
 </head>
 <body>
@@ -46,18 +52,17 @@
     <div class="w3-container">
         <form class="w3-teal">
         <label for="">Unesite Vasu e-mail adresu:</label>
-        <input type="email" name="" id="" class="w3-input w3-border">
+        <input type="email" name="" id="email" class="w3-input w3-border">
         <label for="">Unesite poruku</label>
-        <textarea name="" id="" class="w3-input w3-border"></textarea>
-        <input type="button" value="Pošalji" class="w3-btn w3-teal">
+        <textarea name="" id="poruka" class="w3-input w3-border"></textarea>
+
+        <input type="button" value="Pošalji" class="w3-btn w3-teal" onclick="posalji()">
         </form>
     </div>
     <div></div>
-    <div>
-        <input type="button" value="Posalji">
-    </div>
     <div id="ispis"></div>
     <div id="ispis2"></div>
+    <div id="korisnikUnos"></div>
     <script>
         document.write("<div class='w3-container w3-black'>");
         document.write(" <i> Web-Shop mobiteli tm. by: Ivor Pangos  izradeno u sklopu kolegija Programiranje za internet</i>");
