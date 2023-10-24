@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="w3-container w3-teal">
-        <nav class="navigacija">
+        <nav class="navigacija" id="navigacija">
             <ul class="w3-bar w3-black">
                 <a href="index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
                 <a href="sve_ponude.html" class="w3-bar-item w3-button">Sve ponude</a></li>
@@ -23,7 +23,10 @@
     <p>Kontaktni podatci:</p>
     <p></p>
     <p>Odgovorna osoba: Ivor Pangos</p>
-    <p>Mobilni telefon: 091 234 5678</p>
+    <div id="brojtelefona">
+        <p>Mobilni telefon: 091 234 5678</p>
+    </div>
+    
     <div>
         Adresa: Mose Albaharija 666, 51000 Rijeka
     </div>
@@ -32,27 +35,29 @@
     <div>
         Za sve ostale upite i informacije <br>
     </div>
-    <div class="w3-row">
-        <div class="w3-rest w3-container w3-green">
-        <label for="">Unesite vasu e-adresu:</label> <br>
-        <textarea name="" id="" cols="100" rows="1"></textarea>
-        </div>
-    </div>
-    <div class="w3-col">
-        <div class="w3-col w3-container w3-green">
-        <label for="">Unesite vasu poruku :  </label> <br>
-        <textarea name="" id="" cols="100" rows="10"></textarea>
-        </div>
+    <div class="w3-container">
+        <form class="w3-teal">
+        <label for="">Unesite Vasu e-mail adresu:</label>
+        <input type="email" name="" id="" class="w3-input w3-border">
+        <label for="">Unesite poruku</label>
+        <textarea name="" id="" class="w3-input w3-border"></textarea>
+        <input type="button" value="Pošalji" class="w3-btn w3-teal">
+        </form>
     </div>
     <div></div>
     <div>
         <input type="button" value="Posalji">
     </div>
-
+    <div id="ispis"></div>
+    <div id="ispis2"></div>
     <script>
         document.write("<div class='w3-container w3-black'>");
         document.write(" <i> Web-Shop mobiteli tm. by: Ivor Pangos  izradeno u sklopu kolegija Programiranje za internet</i>");
-        document.write("</div>")
+        document.write("</div>");
+        let tel=document.getElementById("brojtelefona").innerHTML;
+        document.getElementById("ispis").innerHTML=tel;
+        let nav=document.getElementById("navigacija").innerHTML;
+        document.getElementById("ispis2").innerHTML=nav;
     </script>
 </body>
 </html>
