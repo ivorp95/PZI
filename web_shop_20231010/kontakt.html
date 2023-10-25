@@ -14,7 +14,7 @@
             document.getElementById("ispis2").innerHTML=nav;
         }
         function posalji(){
-            alert("poziv funkcije");
+            //alert("poziv funkcije");
             let email=document.getElementById("email").value;
             let poruka=document.getElementById("poruka").value;
             document.getElementById("korisnikUnos").innerHTML="Korisnik "+email+" je poslao poruku sadrzaja "+poruka;
@@ -55,8 +55,7 @@
         <input type="email" name="" id="email" class="w3-input w3-border">
         <label for="">Unesite poruku</label>
         <textarea name="" id="poruka" class="w3-input w3-border"></textarea>
-
-        <input type="button" value="Pošalji" class="w3-btn w3-teal" onclick="posalji()">
+        <input type="button" value="Pošalji" class="w3-btn w3-black" onclick="posalji()">
         </form>
     </div>
     <div></div>
