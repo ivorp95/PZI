@@ -6,6 +6,26 @@
     <title>Registracija novog korisnika</title>
     <link rel="stylesheet" href="../CSS/style_web-shop.css"-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+
+    <script>
+        function ispisiPodatke(){
+            let tel=document.getElementById("brojtelefona").innerHTML;
+            document.getElementById("ispis").innerHTML=tel;
+            let nav=document.getElementById("navigacija").innerHTML;
+            document.getElementById("ispis2").innerHTML=nav;
+        }
+        function posalji(){
+            //alert("poziv funkcije");
+            let ime=document.getElementById("Ime").value;
+            let prezime=document.getElementById("Prezime").value;
+            let email=document.getElementById("Email").value;
+            let drzava=document.getElementById("Drzava").value;
+            let grad=document.getElementById("Grad").value;
+            let adrRacun=document.getElementById("AdrRacun").value;
+            let adrDostava=document.getElementById("AdrDostava").value;
+            document.getElementById("korisnikUnos").innerHTML="Korisnik "+ime+"\s"+prezime;
+        }
+    </script>
 </head>
 <body>
     <div class="w3-container w3-teal">
@@ -41,5 +61,15 @@
             <input type="button" value="Registriraj novog korisnika" class="w3-btn w3-black" onclick="posalji()">
             </form>
         </div>
+        <div></div>
+    <div id="ispis"></div>
+    <div id="ispis2"></div>
+    <div id="korisnikUnos"></div>
+    <script>
+        document.write("<div class='w3-container w3-black'>");
+        document.write(" <i> Web-Shop mobiteli tm. by: Ivor Pangos  izradeno u sklopu kolegija Programiranje za internet</i>");
+        document.write("</div>");
+        ispisiPodatke();
+    </script>
 </body>
 </html>
