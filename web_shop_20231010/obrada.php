@@ -1,3 +1,6 @@
+<!-- CLI start php server: php -S localhost:2222 -->
+
+
 <?php
 $email=$_GET['email'];
 $poruka=$_GET['poruka'];
