@@ -1,5 +1,5 @@
 <!-- CLI start php server: php -S localhost:2222 -->
-
+<!-- http://localhost:2222/obrada.php?email=pero@peric.pe&poruka=legendooo dodavanje vrijednosti varijablama -->
 
 <?php
 $email=$_GET['email'];
