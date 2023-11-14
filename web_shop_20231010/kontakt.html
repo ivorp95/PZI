@@ -17,14 +17,14 @@
             //alert("poziv funkcije");
             let email=document.getElementById("email").value;
             let poruka=document.getElementById("poruka").value;
-            //document.getElementById("korisnikUnos").innerHTML="Korisnik "+email+" je poslao poruku sadrzaja "+poruka;
+            document.getElementById("korisnikUnos").innerHTML="Korisnik "+email+" je poslao poruku sadrzaja "+poruka;
             const httpRequest=new XMLHttpRequest();
             httpRequest.onreadystatechange=function(){
                 if(httpRequest.readyState==4){
                     document.getElementById("korisnikUnos").innerHTML=httpRequest.responseText;
                 }
             }
-            httpRequest.open("GET", "obrada.php?"+email+"&poruka"+poruka);
+            httpRequest.open("GET","obrada.php?"+email+"&poruka="+poruka);
             httpRequest.send();
         }
     </script>
