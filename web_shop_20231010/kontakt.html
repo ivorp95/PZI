@@ -24,7 +24,7 @@
                     document.getElementById("korisnikUnos").innerHTML=httpRequest.responseText;
                 }
             }
-            httpRequest.open("GET", "./obrada.php?"+email+"&poruka"+porika);
+            httpRequest.open("GET", "obrada.php?"+email+"&poruka"+poruka);
             httpRequest.send();
         }
     </script>
