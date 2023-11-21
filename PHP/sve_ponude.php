@@ -38,7 +38,7 @@
     <div>Popis mobitela za prodaju:
     <table border="2px">
             
-            <th></th>
+            
             <th>Naziv uredjaja</th>
             <th>Proizvodjac</th>
             <th>Opis</th>
@@ -51,6 +51,8 @@
                 echo "<td>".$row ["NAZIV"]."</td>";
                 echo "<td>".$row ["PROIZVODAC"]."</td>";
                 echo "<td>".$row ["CIJENA"]."</td>";
+                echo "<td>".$row ["SLIKA"]."</td>";
+                echo "<td>".$row ["OPIS"]."</td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
