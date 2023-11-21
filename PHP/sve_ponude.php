@@ -50,9 +50,10 @@
                 echo "<tr>";
                 echo "<td>".$row ["NAZIV"]."</td>";
                 echo "<td>".$row ["PROIZVODAC"]."</td>";
-                echo "<td>".$row ["CIJENA"]."</td>";
-                echo "<td>".$row ["SLIKA"]."</td>";
                 echo "<td>".$row ["OPIS"]."</td>";
+                echo "<td><img src='".$row["SLIKA"]."' width='100px' alt='" ."'></td>";
+                //echo "<td>".$row ["SLIKA"]."</td>";
+                echo "<td>".$row ["CIJENA"]."</td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
