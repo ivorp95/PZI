@@ -13,11 +13,11 @@
     <div class="w3-container w3-teal">
         <nav class="navigacija">
             <ul class="w3-bar w3-black">
-                <a href="index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
-                <a href="sve_ponude.html" class="w3-bar-item w3-button">Sve ponude</a></li>
-                <a href="ponude.php" class="w3-bar-item w3-button">ponude php</a></li>
-                <a href="kontakt.html" class="w3-bar-item w3-button">Kontakt</a></li>
-                <a href="registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
+                <a href="../web_shop_20231010/index.html" class="w3-bar-item w3-button">Pocetna stranica</a></li>
+                <a href="../web_shop_20231010/sve_ponude.html" class="w3-bar-item w3-button">Sve ponude</a></li>
+                <a href="http://localhost:2222/PHP/sve_ponude.php" class="w3-bar-item w3-button">ponude php</a></li>
+                <a href="../web_shop_20231010/kontakt.html" class="w3-bar-item w3-button">Kontakt</a></li>
+                <a href="../web_shop_20231010/registracija.html" class="w3-bar-item w3-button">Registracija</a></li>
             </ul>
         </nav>
     </div>
@@ -36,13 +36,22 @@
     ?>
     </center>
     <div>Popis mobitela za prodaju:
+    <table border="2px">
+            
+            <th></th>
+            <th>Naziv uredjaja</th>
+            <th>Proizvodjac</th>
+            <th>Opis</th>
+            <th>Slika</th>
+            <th>Cijena</th>
+            </tr>
         <?php
             while($row = mysqli_fetch_assoc($res)){
-                echo '<tr>';
+                echo "<tr>";
                 echo "<td>".$row ["NAZIV"]."</td>";
                 echo "<td>".$row ["PROIZVODAC"]."</td>";
                 echo "<td>".$row ["CIJENA"]."</td>";
-                echo "<td>";
+                echo "</tr>";
             }mysqli_close($conn);
         ?>
         <ol>
