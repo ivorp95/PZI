@@ -23,8 +23,28 @@
     </div>
     <center>
     <h1>WEB-SHOP - SVA PONUDA</h1>
+    <p></p>
+    <?php
+        $server = "ucka.veleri.hr:3306";
+        $database = "ipangos";
+        $username = "ipangos";
+        $password = "11";
+    
+        $conn = mysqli_connect($server, $username, $password, $database);
+        $query = "SELECT * FROM mobiteli_pzi";
+        $res = mysqli_query($conn, $query);
+    ?>
     </center>
     <div>Popis mobitela za prodaju:
+        <?php
+            while($row = mysqli_fetch_assoc($res)){
+                echo '<tr>';
+                echo "<td>".$row ["NAZIV"]."</td>";
+                echo "<td>".$row ["PROIZVODAC"]."</td>";
+                echo "<td>".$row ["CIJENA"]."</td>";
+                echo "<td>";
+            }mysqli_close($conn);
+        ?>
         <ol>
             <li>Samsung Galaxy S23 5G 128GB crni <a href="https://www.a1.hr/webshop/mobiteli-na-pretplatu/samsung-samsung-galaxy-s23-5g-128gb-crni/1000043118/savrsena" target="_blank">Vise o uredjaju....</a>
             <img src="../img/samsung-s23.jpg" width="200px" alt=""></li>
