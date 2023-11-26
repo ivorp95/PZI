@@ -52,19 +52,18 @@
                 echo "<td>".$row ["PROIZVODAC"]."</td>";
                 echo "<td>".$row ["OPIS"]."</td>";
                 echo "<td><img src='".$row["SLIKA"]."' width='100px' alt='" ."'></td>";
-                //echo "<td>".$row ["SLIKA"]."</td>";
                 echo "<td>".$row ["CIJENA"]."</td>";
                 echo "</tr>";
             }mysqli_close($conn);
         ?>
-        <ol>
+      <!--  <ol>
             <li>Samsung Galaxy S23 5G 128GB crni <a href="https://www.a1.hr/webshop/mobiteli-na-pretplatu/samsung-samsung-galaxy-s23-5g-128gb-crni/1000043118/savrsena" target="_blank">Vise o uredjaju....</a>
             <img src="../img/samsung-s23.jpg" width="200px" alt=""></li>
             <li>Samsung Galaxy A54 5G 256GB crni <a href="https://www.a1.hr/webshop/mobiteli-na-pretplatu/samsung-samsung-galaxy-a54-5g-256gb-crni/1000043636/savrsena" target="_blank">Vise o uredjaju...</a>
             <img src="../img/samsung-galaxy-a-51.png" width="200px" alt=""></li>
             <li>Apple iPhone 15 128GB 5G crni <a href="https://www.a1.hr/webshop/mobiteli-na-pretplatu/apple-iphone-15-128gb-5g-crni/1000045094/savrsena" target="_blank">Vise o uredjaju..</a>
             <img src="../img/apple-iphone-15.jpeg?tr=w-1200" width="250px" alt=""></li>
-        </ol>
+        </ol> --> 
     </div>
     
 </body>
