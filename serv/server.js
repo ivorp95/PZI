@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.get("/podatci", function(req,res){
     return res.send({message:"ma bravo lipi moj "});
 });
@@ -13,7 +17,7 @@ app.get("/podatci/:id", function(req,res){
 
 app.post("/podatci", function(req,res){
     var podatci = req.body.podatak;
-    return res.send({message: podatci + "ok"});
+    return res.send({message: podatci + " ok"});
 });
 
 // set port
