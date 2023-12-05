@@ -20,12 +20,36 @@ app.post("/podatci", function(req,res){
     return res.send({message: podatci + " ok"});
 });
 
+app.get("/korisnik", function(req,res){
+    return res.send({message:"READ  korisnik (svi)"});
+});
+
+app.get("/korisnik/:id", function(req,res){
+    var id=req.params.id;
+    return res.send({message:"READ "+id});
+});
+
 app.post("/korisnik", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var adr= req.body.podatak3;
-    return res.send({message: ime +" "+ prezime +" "+adr+" ok"});
+    return res.send({message: "CREATE " +ime +" "+ prezime +" "+adr+" ok"});
 });
+
+app.put("/korisnik/:id", function(req,res){
+    var id=req.params.id;
+    var adr= req.body.adresa;
+    return res.send({message: "UPDATE "+id +"nova adresa:"+adr});
+});
+
+app.delete("/korisnik/:id",function(req,res){
+    var id=req.params.id;
+    return res.send({message: "DELETE " +id});
+});
+
+
+
+
 
 // set port
 app.listen(3000, function () {
