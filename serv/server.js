@@ -23,7 +23,8 @@ app.post("/podatci", function(req,res){
 app.post("/korisnik", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
-    return res.send({message: ime +" "+ prezime + " ok"});
+    var adr= req.body.podatak3;
+    return res.send({message: ime +" "+ prezime +" "+adr+" ok"});
 });
 
 // set port
