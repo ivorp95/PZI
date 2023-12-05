@@ -4,6 +4,7 @@ var app = express();
 app.get("/podatci", function(req,res){
     return res.send({message:"ma bravo majmune"});
 
+
 });
 
 // set port
