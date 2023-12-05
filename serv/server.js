@@ -20,6 +20,12 @@ app.post("/podatci", function(req,res){
     return res.send({message: podatci + " ok"});
 });
 
+app.post("/korisnik", function(req,res){
+    var ime = req.body.podatak1;
+    var prezime = req.body.podatak2;
+    return res.send({message: ime +" "+ prezime + " ok"});
+});
+
 // set port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');
