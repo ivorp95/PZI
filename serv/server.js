@@ -7,6 +7,7 @@ app.get("/podatci", function(req,res){
 
 app.get("/podatci/:id", function(req,res){
     var id=req.params.id;
+    id++;
     return res.send({message: id +" oki doki"});
 });
 
