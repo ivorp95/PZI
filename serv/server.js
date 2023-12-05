@@ -2,9 +2,12 @@ var express = require('express');
 var app = express();
 
 app.get("/podatci", function(req,res){
-    return res.send({message:"ma bravo majmune"});
+    return res.send({message:"ma bravo lipi moj "});
+});
 
-
+app.get("/podatci/:id", function(req,res){
+    var id=req.params.id;
+    return res.send({message: id +" oki doki"});
 });
 
 // set port
