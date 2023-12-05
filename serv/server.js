@@ -11,6 +11,11 @@ app.get("/podatci/:id", function(req,res){
     return res.send({message: id +" oki doki"});
 });
 
+app.post("/podatci", function(req,res){
+    var podatci = req.body.podatak;
+    return res.send({message: podatci + "ok"});
+});
+
 // set port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');
