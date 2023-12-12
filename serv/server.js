@@ -56,7 +56,7 @@ app.post("/korisnik", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var tel= req.body.podatak3;
-    dbConn.query('insert into korisnik_pzi(id,ime,prezime,tel) values (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
+    dbConn.query('INSERT INTO korisnik_pzi(id,ime,prezime,tel) VALUES (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results[0], message: 'INSERT into Korisnici ime: '+ime+', prezime: '+prezime+', tel: '+tel });
     });
@@ -68,7 +68,7 @@ app.put("/korisnik/:id", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var tel= req.body.podatak3;
-    dbConn.query('update korisnik_pzi set ime=? ,prezime=? ,tel=? where id=? ', [ime, prezime, tel, id] , function (error, results, fields) {
+    dbConn.query('UPDATE korisnik_pzi SET ime=? ,prezime=? ,tel=? WHERE id=? ', [ime, prezime, tel, id] , function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results[0], message: 'UPDATE novi podatci ime: '+ime+', prezime: '+prezime+', tel: '+tel });
     });
@@ -78,7 +78,7 @@ app.put("/korisnik/:id", function(req,res){
 app.delete("/korisnik/:id",function(req,res){
     var id=req.params.id;
     if(!id){
-    return res.status(400).send({ error: true, message: 'Please provide useful_part_id' });
+    return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
     dbConn.query('delete FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
     if (error) throw error;
