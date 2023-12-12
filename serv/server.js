@@ -1,9 +1,22 @@
 var express = require('express');
 var app = express();
 
+//const dbConfig = require("./db.config.js");
+var mysql = require('mysql');
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+var dbConn = mysql.createConnection({
+    host: "ucka.veleri.hr",
+    port: 3306,
+    user: "ipangos",
+    password: "11",
+    database: "ipangos"
+});
+
+dbConn.connect();
 
 app.get("/podatci", function(req,res){
     return res.send({message:"ma bravo lipi moj "});
@@ -21,12 +34,22 @@ app.post("/podatci", function(req,res){
 });
 
 app.get("/korisnik", function(req,res){
-    return res.send({message:"READ  korisnik (svi)"});
+    dbConn.query('SELECT * FROM korisnik_pzi', function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
+});
 });
 
 app.get("/korisnik/:id", function(req,res){
     var id=req.params.id;
-    return res.send({message:"READ "+id});
+    if(!id){
+        return res.status(400).send({ error: true, message: 'Please provide useful_part_id' });
+    }
+    dbConn.query('SELECT * FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
+    if (error) throw error;
+    return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
+});
+    //return res.send({message:"READ "+id});
 });
 
 app.post("/korisnik", function(req,res){
