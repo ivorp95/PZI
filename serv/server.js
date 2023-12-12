@@ -56,18 +56,23 @@ app.post("/korisnik", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
     var tel= req.body.podatak3;
-   /* dbConn.query('insert into korisnik_pzi(ime,prezime,tel) values (?,?,?) ', ime, prezime, tel , function (error, results, fields) {
+    dbConn.query('insert into korisnik_pzi(id,ime,prezime,tel) values (null,?,?,?) ', [ime, prezime, tel] , function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'INSERT into Korisnici ime prezime tel' });
+        return res.send({ error: false, data: results[0], message: 'INSERT into Korisnici ime: '+ime+', prezime: '+prezime+', tel: '+tel });
     });
-    */
-    return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
+    //return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
 });
 
 app.put("/korisnik/:id", function(req,res){
     var id=req.params.id;
-    var adr= req.body.adresa;
-    return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
+    var ime = req.body.podatak1;
+    var prezime = req.body.podatak2;
+    var tel= req.body.podatak3;
+    dbConn.query('update korisnik_pzi set ime=? ,prezime=? ,tel=? where id=? ', [ime, prezime, tel, id] , function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results[0], message: 'UPDATE novi podatci ime: '+ime+', prezime: '+prezime+', tel: '+tel });
+    });
+    //return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
 });
 
 app.delete("/korisnik/:id",function(req,res){
