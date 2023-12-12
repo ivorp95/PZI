@@ -34,7 +34,7 @@ app.post("/podatci", function(req,res){
 });
 
 app.get("/korisnik", function(req,res){
-    dbConn.query('SELECT * FROM korisnik_pzi', function (error, results, fields) {
+    dbConn.query('SELECT * FROM Korisnik_pzi', function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'READ svi Korisnici' });
 });
