@@ -67,7 +67,15 @@ app.put("/korisnik/:id", function(req,res){
 
 app.delete("/korisnik/:id",function(req,res){
     var id=req.params.id;
-    return res.send({message: "DELETE " +id});
+    if(!id){
+    return res.status(400).send({ error: true, message: 'Please provide useful_part_id' });
+    }
+    dbConn.query('delete FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
+    if (error) throw error;
+    return res.send({ error: false, data: results, message: 'DELETE from Korisnici where id=?' });
+});
+
+   // return res.send({message: "DELETE " +id});
 });
 
 
