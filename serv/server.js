@@ -39,7 +39,7 @@ app.post("/korisnik", function(req,res){
 app.put("/korisnik/:id", function(req,res){
     var id=req.params.id;
     var adr= req.body.adresa;
-    return res.send({message: "UPDATE "+id +"nova adresa:"+adr});
+    return res.send({message: "UPDATE "+id +" nova adresa:"+adr});
 });
 
 app.delete("/korisnik/:id",function(req,res){
