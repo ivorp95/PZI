@@ -55,8 +55,13 @@ app.get("/korisnik/:id", function(req,res){
 app.post("/korisnik", function(req,res){
     var ime = req.body.podatak1;
     var prezime = req.body.podatak2;
-    var adr= req.body.podatak3;
-    return res.send({message: "CREATE " +ime +" "+ prezime +" "+adr+" ok"});
+    var tel= req.body.podatak3;
+   /* dbConn.query('insert into korisnik_pzi(ime,prezime,tel) values (?,?,?) ', ime, prezime, tel , function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'INSERT into Korisnici ime prezime tel' });
+    });
+    */
+    return res.send({message: "CREATE " +ime +" "+ prezime +" "+tel+" ok"});
 });
 
 app.put("/korisnik/:id", function(req,res){
