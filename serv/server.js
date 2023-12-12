@@ -80,7 +80,7 @@ app.delete("/korisnik/:id",function(req,res){
     if(!id){
     return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
-    dbConn.query('delete FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
+    dbConn.query('DELETE FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
     if (error) throw error;
     return res.send({ error: false, data: results, message: 'DELETE from Korisnici where id=?' });
 });
