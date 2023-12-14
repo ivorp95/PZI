@@ -43,7 +43,7 @@ app.get("/korisnik", function(req,res){
 app.get("/korisnik/:id", function(req,res){
     var id=req.params.id;
     if(!id){
-        return res.status(400).send({ error: true, message: 'Please provide useful_part_id' });
+        return res.status(400).send({ error: true, message: 'Krivi ID' });
     }
     dbConn.query('SELECT * FROM korisnik_pzi WHERE id=? ', id , function (error, results, fields) {
     if (error) throw error;
