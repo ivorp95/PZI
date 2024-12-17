@@ -1,5 +1,0 @@
-#Protect Directory
-AuthName "Dialog prompt"
-AuthType Basic
-AuthUserFile /Users/ivorp/Documents/TELEMATIKA/2023-GOD2_SEM_3/programiranje_za_internet/html_vjezbe/SIKS_html_vjezba/.htpasswd
-Require valid-user
